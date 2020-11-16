@@ -208,7 +208,13 @@ Choisir les nombres magiques de façon aléatoire ne donne pas forcément des su
 
 **Preuve ?**
 
+Multiplicateur = $a^{i_0}$
+Incrément = $\frac{a^{i_0} - 1}{a - 1}c$
+Graine = $X_{n_0}$
+
 **Donner une formule directe pour calculer $X_n$ (en fonction de $X_0$, $a$, $c$, $m$, et $n$) ?**
+
+$X_{n} = a^n X_0 + \frac{a^{n} - 1}{a - 1}c \mod m$
 
 ---
 
@@ -270,8 +276,6 @@ https://en.wikipedia.org/wiki/Linear-feedback_shift_register
 
 ---
 
-
-
 # 3- Suite aléatoire : qu'est-ce que c'est ?
 
 Paradoxalement, la théorie des probabilité n'est pas la mieux adaptée pour définir ce qu'est une suite aléatoire. Considérons les deux suites suivantes :
@@ -301,6 +305,24 @@ Pour nous, un ordinateur correspond à une [machine de Turing universelle](https
 
 **Preuve ?**
 
+Par l'absurde, on suppose que Kolmo() existe: Kolmo prend en entrée une suite de caractères s et retourne K(s), cad la taille du plus petit programme générant la suite de caractères s. On note k la complexité de Kolomogorov de Kolmo().
+
+Considérons le programme suivant:
+
+```
+n := 1
+Tant que Kolmo(n) < k + 1000 faire:
+	n := n + 1
+Fin du Tant que
+écrire n
+```
+
+Cet algorithme écrit le plus petit nombre à avoir une complexité de Kolmogorov supérieur à k + 1000 (ce nombre existe car il n'y a qu'un nombre fini de programmes de taille plus petite que k + 1000 et il y a une infinité de nombres entiers naturels)
+
+Mais l'algorithme ci-dessus s'écrit justement avec moins de k + 1000 caractères:
+il est donc de complexité inférieure à k + 1000, or il écrit justement un nombre de complexité supérieur à k + 1000, ce qui est absurde.
+Donc il n'existe pas de fonction qui calcul la complexité de Kolmogorov.
+
 **Définition :** *Indépendance de l'ordinateur :*
 
 > Une suite infinie $a=a_1a_2...a_n...$ est dite aléatoire si $\lim_{n\rightarrow\infty} \frac{K(a)}{n}=1$.
@@ -311,11 +333,31 @@ Pour nous, un ordinateur correspond à une [machine de Turing universelle](https
 
 **Preuve ?**
 
+$K(a) > m = (1 - \epsilon) * n$
+
+Soit $n$ un entier naturel.
+Il existe $2^n$ suites binaires de taille n.
+Soit $\epsilon \in [0,1]$ et soit $m = (1 - \epsilon)n$
+Il existe $\sum_{i=0}^{m} 2^i \le 2^{m + 1}$ suites binaires de taille inférieure ou égale à m.
+
+Ainsi, seule une proportion inférieure à $\frac{2^{m+1}}{2^n}$ de suites binaires de taille n peuvent avoir une complexité de Kolmogorov inférieure à $m$.
+Or,
+$
+\frac{2^{m + 1}}{2^n} 
+= 2^{(1 - \epsilon)n + 1 - n} 
+= 2^{-\epsilon * n + 1} 
+= \frac{2}{2^{\epsilon * n}}
+$ (tend vers 0 quand $n$ tend vers l'infini). CQFD!
+
 **Propriété :**
 
 > Une suite binaire aléatoire $a=a_1a_2...a_n$ vérifie la loi des grands nombres : $\lim_{n\rightarrow\infty} \frac{\sum_{i=1}^n a_i}{n}=\frac{1}{2}$.
 
-**Preuve ?**
+**Idée de preuve:**
+
+> Shannon source coding theorem: taille compressée arbitrairement proche de 
+$H * n$, avec $H = -p{_1}\ln(p_1) - (1 - p_1)\ln(1 - p_1)$ et $H < 1$ pour $p_1 \ne 0.5$
+https://en.wikipedia.org/wiki/Arithmetic_coding
 
 ---
 
@@ -351,8 +393,6 @@ But : construire une suite pseudo-aléatoire, c'est-à-dire une suite qui s'appr
 - Utiliser des tests mécaniques non-biaisés !
 
 **Proposer des tests statistiques.**
-
-
 
 ---
 
