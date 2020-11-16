@@ -1,7 +1,7 @@
 # Analyse d'Algorithmes et Génération Aléatoire (AAGA)
 
 ---
-[TOC]
+[[TOC]]
 
 ---
 
