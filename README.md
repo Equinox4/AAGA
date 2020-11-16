@@ -121,19 +121,19 @@ Les générateurs de nombres pseudo-aléatoires sont "tous" construits avec une 
 - Soit $E$ l'ensemble des entiers dans lequel on souhaite générer.
 - On choisit $f : E \rightarrow E$.
 - On définit "aléatoirement" $X_0 \in E$, nommé la graine.
-- Puis on fait $X_{n+1}=f(X_n)$.
+- Puis on fait $X_{n + 1} = f(X_n)$.
 
 ---
 
 **Propriété :** 
 
 > - $\exists\lambda\in \mathbb{N}^*$ appelé période du générateur (on a $\lambda\leq |E|$).
-> - $\exists n_0\leq\lambda,\forall n\geq n_0, X_{n+\lambda}=X_n$.
+> - $\exists n_0\leq\lambda,\forall n\geq n_0, X_{n + \lambda} = X_n$.
 
 **Remarques :**
 
 > - Une fois que $n_0$ est atteint, on boucle indéfiniment dans la même suite d'entiers avec une période $\lambda$.
-> - La période est définie par les entiers $i,j$ les plus proches possible telle que $X_i=X_j$.
+> - La période est définie par les entiers $i, j$ les plus proches possible telle que $X_i = X_j$.
 > - La longueur de la période est cruciale pour qu'un générateur soit de qualité.
 
 **Preuve de l'existence de $\lambda$ ?**
@@ -142,7 +142,7 @@ Les générateurs de nombres pseudo-aléatoires sont "tous" construits avec une 
 
 **Exemple :** 
 
-> $E={1,2,...,8}$, $f(x)=2x \mod(7) +1$ et $X_0=8$.
+> $E={1, 2, ..., 8}$, $f(x) = 2x \mod(7) + 1$ et $X_0 = 8$.
 > **Que valent $\lambda$ et $n_0$ ?**
 
 ---
@@ -173,38 +173,39 @@ Schéma introduit par Lehmer en 1949. Jusque dans les années 90 c'était la mé
 
 > On a besoin de 4 entiers :
 >
-> - $m$ : le modulo ($m>0$)
-> - $a$ : le multiplicateur ($0\leq a <m$)
-> - $c$ : l'incrément ($0\leq c<m$)
-> - $X_0$ : la valeur initiale, appelée graine ($0\leq X_0<m$)
+> - $m$ : le modulo ($m > 0$)
+> - $a$ : le multiplicateur ($0 \leq a < m$)
+> - $c$ : l'incrément ($0 \leq c < m$)
+> - $X_0$ : la valeur initiale, appelée graine ($0 \leq X_0 < m$)
 >
-> On construit une suite de nombre dans $[\![0,m-1]\!]$ de la manière suivante : $X_{n+1}=(a X_n + c) \mod m$.
+> On construit une suite de nombre dans $[\![0,m-1]\!]$ de la manière suivante : $X_{n + 1} = (a X_n + c) \mod m$.
 > (X_n) est appelée suite congruentielle (ou modulaire) linéaire
 
 ---
 
 **Exemple :**
 
-> $X_{n+1}=(2 X_n+3) \mod 10$
+> $X_{n + 1} = (2 X_n + 3) \mod 10$
 
 <!--
 0|3 9 1 5 3
 1|5 3 9 1
 2|7 7
 3|9 1 5 3
-Choisir les nombres magiques de façon aléatoire ne donne pas forcément des suites aléatoires. Par exemple ici, seuls des entiers impairs peuvent apparaître.-->
+Choisir les nombres magiques de façon aléatoire ne donne pas forcément des suites aléatoires. Par exemple ici, seuls des entiers impairs peuvent apparaître.
+-->
 
 ---
 
 **Exercice :**
 
-> Exprimer $X_{n+k}$ en fonction de $X_n$, $a$, $c$, $m$ et $k$. On supposera $a\geq 2$.
+> Exprimer $X_{n + k}$ en fonction de $X_n$, $a$, $c$, $m$ et $k$. On supposera $a \geq 2$.
 
 ---
 
 **Propriété :**
 
-> Si $(X_n)$ est une suite congruentielle linéaire, alors les suites extraites $(X_{n_0+i_0 n})$ avec $n_0$ et $i_0$ fixés sont des suites congruentielles linéaires.
+> Si $(X_n)$ est une suite congruentielle linéaire, alors les suites extraites $(X_{n_0 + i_0 n})$ avec $n_0$ et $i_0$ fixés sont des suites congruentielles linéaires.
 
 **Preuve ?**
 
@@ -221,10 +222,10 @@ $X_{n} = a^n X_0 + \frac{a^{n} - 1}{a - 1}c \mod m$
 - Choix du module $m$ ?
   - Pour générer des bits, ne pas prendre $m=2$, si non 010101 dans le meilleur cas
   - Utiliser $Y_n=X_n \mod d$
-  - $m=2^{64}$ rapide (**Pourquoi ?**), mais attention aux bits de poids faibles : si $d$ divise $m$, alors $Y_{n+1}=(a Y_n+c) \mod d$. Prendre les bits de poids fort dans ce cas.
+  - $m = 2^{64}$ rapide (**Pourquoi ?**), mais attention aux bits de poids faibles : si $d$ divise $m$, alors $Y_{n + 1} = (a Y_n + c) \mod d$. Prendre les bits de poids fort dans ce cas.
   - Prendre $m=$ grand nombre premier
 - Choix du multiplicateur $a$ et de l'incrément $c$ ?
-  - On veut la période la plus longue possible, mais pas seulement ($a=c=1$) !
+  - On veut la période la plus longue possible, mais pas seulement ($a = c = 1$) !
 
 ## Générateur Blum Blum Shub (BBS)
 
@@ -258,7 +259,7 @@ https://en.wikipedia.org/wiki/Linear-feedback_shift_register
 
 **Avantages :**
 
-> - Sa période : 2^{19937}-1 (c'est un nombre premier de Mersenne)
+> - Sa période : $2^{19937} - 1$ (c'est un nombre premier de Mersenne)
 > - k-distribué avec une précision de 32 bits
 > - Passe la grande majorité des tests statistiques (notamment Die Hard tests)
 
@@ -272,7 +273,7 @@ https://en.wikipedia.org/wiki/Linear-feedback_shift_register
 
 > - La période est aussi grande car l'algorithme est basé sur un ensemble de 624 entiers (32 bits) indépendants.
 > - Il faut pouvoir fournir une graine (relativement aléatoire) de 624 entiers : en général, on fait appel à un autre générateur aléatoire pour construire la graine.
-> - Il existe une version simplifiée datant de 2006 avec une période de $2^{607}-1$.
+> - Il existe une version simplifiée datant de 2006 avec une période de $2^{607} - 1$.
 
 ---
 
@@ -293,7 +294,7 @@ En informatique, la notion de suite aléatoire a convergé vers la notion de sui
 
 **Définition :** *Complexité de Kolmogorov :*
 
-> Soit $a=a_1a_2...a_n$ une suite binaire. La complexité de Kolmogorov de la suite $a$ est la longueur, en nombre de bits, du plus petit programme permettant à un ordinateur donné de générer $a$.
+> Soit $a = a_1a_2...a_n$ une suite binaire. La complexité de Kolmogorov de la suite $a$ est la longueur, en nombre de bits, du plus petit programme permettant à un ordinateur donné de générer $a$.
 
 Pour nous, un ordinateur correspond à une [machine de Turing universelle](https://fr.wikipedia.org/wiki/Machine_de_Turing_universelle). La complexité de Kolmogorov est définie à une constante additive près, car elle dépend de l'ordinateur choisi.
 
@@ -305,27 +306,27 @@ Pour nous, un ordinateur correspond à une [machine de Turing universelle](https
 
 **Preuve ?**
 
-Par l'absurde, on suppose que Kolmo() existe: Kolmo prend en entrée une suite de caractères s et retourne K(s), cad la taille du plus petit programme générant la suite de caractères s. On note k la complexité de Kolomogorov de Kolmo().
+Par l'absurde, on suppose que Kolmo() existe: Kolmo prend en entrée une suite de caractères $s$ et retourne $K(s)$, cad la taille du plus petit programme générant la suite de caractères $s$. On note $k$ la complexité de Kolomogorov de Kolmo().
 
 Considérons le programme suivant:
 
 ```
 n := 1
 Tant que Kolmo(n) < k + 1000 faire:
-	n := n + 1
+    n := n + 1
 Fin du Tant que
 écrire n
 ```
 
-Cet algorithme écrit le plus petit nombre à avoir une complexité de Kolmogorov supérieur à k + 1000 (ce nombre existe car il n'y a qu'un nombre fini de programmes de taille plus petite que k + 1000 et il y a une infinité de nombres entiers naturels)
+Cet algorithme écrit le plus petit nombre à avoir une complexité de Kolmogorov supérieur à $k + 1000$ (ce nombre existe car il n'y a qu'un nombre fini de programmes de taille plus petite que $k + 1000$ et il y a une infinité de nombres entiers naturels)
 
-Mais l'algorithme ci-dessus s'écrit justement avec moins de k + 1000 caractères:
-il est donc de complexité inférieure à k + 1000, or il écrit justement un nombre de complexité supérieur à k + 1000, ce qui est absurde.
+Mais l'algorithme ci-dessus s'écrit justement avec moins de $k + 1000$ caractères:
+il est donc de complexité inférieure à $k + 1000$, or il écrit justement un nombre de complexité supérieur à $k + 1000$, ce qui est absurde.
 Donc il n'existe pas de fonction qui calcul la complexité de Kolmogorov.
 
 **Définition :** *Indépendance de l'ordinateur :*
 
-> Une suite infinie $a=a_1a_2...a_n...$ est dite aléatoire si $\lim_{n\rightarrow\infty} \frac{K(a)}{n}=1$.
+> Une suite infinie $a = a_1a_2...a_n...$ est dite aléatoire si $\lim_{n \rightarrow \infty} \frac{K(a)}{n} = 1$.
 
 **Propriété :**
 
@@ -336,11 +337,11 @@ Donc il n'existe pas de fonction qui calcul la complexité de Kolmogorov.
 $K(a) > m = (1 - \epsilon) * n$
 
 Soit $n$ un entier naturel.
-Il existe $2^n$ suites binaires de taille n.
+Il existe $2^n$ suites binaires de taille $n$.
 Soit $\epsilon \in [0,1]$ et soit $m = (1 - \epsilon)n$
-Il existe $\sum_{i=0}^{m} 2^i \le 2^{m + 1}$ suites binaires de taille inférieure ou égale à m.
+Il existe $\sum_{i = 0}^{m} 2^i \le 2^{m + 1}$ suites binaires de taille inférieure ou égale à $m$.
 
-Ainsi, seule une proportion inférieure à $\frac{2^{m+1}}{2^n}$ de suites binaires de taille n peuvent avoir une complexité de Kolmogorov inférieure à $m$.
+Ainsi, seule une proportion inférieure à $\frac{2^{m + 1}}{2^n}$ de suites binaires de taille n peuvent avoir une complexité de Kolmogorov inférieure à $m$.
 Or,
 $
 \frac{2^{m + 1}}{2^n} 
@@ -351,12 +352,12 @@ $ (tend vers 0 quand $n$ tend vers l'infini). CQFD!
 
 **Propriété :**
 
-> Une suite binaire aléatoire $a=a_1a_2...a_n$ vérifie la loi des grands nombres : $\lim_{n\rightarrow\infty} \frac{\sum_{i=1}^n a_i}{n}=\frac{1}{2}$.
+> Une suite binaire aléatoire $a=a_1a_2...a_n$ vérifie la loi des grands nombres : $\lim_{n \rightarrow \infty} \frac{\sum_{i = 1}^n a_i}{n} = \frac{1}{2}$.
 
 **Idée de preuve:**
 
 > Shannon source coding theorem: taille compressée arbitrairement proche de 
-$H * n$, avec $H = -p{_1}\ln(p_1) - (1 - p_1)\ln(1 - p_1)$ et $H < 1$ pour $p_1 \ne 0.5$
+$H * n$, avec $H = -p{_1}\log_2(p_1) - (1 - p_1)\log_2(1 - p_1)$ et $H < 1$ pour $p_1 \ne 0.5$
 https://en.wikipedia.org/wiki/Arithmetic_coding
 
 ---
@@ -365,7 +366,7 @@ https://en.wikipedia.org/wiki/Arithmetic_coding
 
 > - Plusieurs autres propriétés statistiques sont valides sur les suites aléatoires.
 > - Suite des décimales de $\pi$ non aléatoire, mais suit les bonnes propriétés de statistiques :
->   $pi=3.14159265358979323846264338327950$...
+>   $pi = 3.14159265358979323846264338327950$...
 > - Fabriqué de manière déterministe une suite aléatoire de bits (ou de n'importe quel objet) est contradictoire.
 
 But : construire une suite pseudo-aléatoire, c'est-à-dire une suite qui s'approche d'une suite aléatoire.
@@ -374,7 +375,7 @@ But : construire une suite pseudo-aléatoire, c'est-à-dire une suite qui s'appr
 
 **Remarque :** (Informellement)
 
-> On a besoin de s'approcher de l'imprévisible. Une suite $a$ est pseudo-aléatoire si elle est produite par un algorithme et qu'il est algorithmiquement difficile de prévoir avec une probabilité $>\frac{1}{2}$ le bit $a_{n+1}$ en connaissant tous les bits $a_1a_2...a_n$ précédents (Formalisé par Yao en 1982).
+> On a besoin de s'approcher de l'imprévisible. Une suite $a$ est pseudo-aléatoire si elle est produite par un algorithme et qu'il est algorithmiquement difficile de prévoir avec une probabilité $>\frac{1}{2}$ le bit $a_{n + 1}$ en connaissant tous les bits $a_1a_2...a_n$ précédents (Formalisé par Yao en 1982).
 
 ---
 
@@ -389,7 +390,7 @@ But : construire une suite pseudo-aléatoire, c'est-à-dire une suite qui s'appr
 ## Tests statistiques
 
 - Difficile pour un humain de décider manuellement si une suite est aléatoire ou pas (tendance à éviter les choses qui "semblent" non-aléatoires, e.g. mêmes nombres consécutifs).
-- $$\pi=3.14159\textcolor{red}{26}53589\textcolor{blue}{793238}46\textcolor{red}{26}43\textcolor{blue}{383279}50$$
+- $$\pi = 3.14159\textcolor{red}{26}53589\textcolor{blue}{793238}46\textcolor{red}{26}43\textcolor{blue}{383279}50$$
 - Utiliser des tests mécaniques non-biaisés !
 
 **Proposer des tests statistiques.**
@@ -443,7 +444,7 @@ Si a priori, il n'y a pas de contrainte structurelle sur les objets à tester, l
 
 **Proposition :**
 
-> Il y a $C_n=\frac{1}{n+1}{2n \choose n}$ (dit nombres de Catalan) arbres binaire avec $n$ nœuds internes (et donc $n+1$ feuilles).
+> Il y a $C_n=\frac{1}{n + 1}{2n \choose n}$ (dit nombres de Catalan) arbres binaire avec $n$ nœuds internes (et donc $n + 1$ feuilles).
 
 **Preuve ?**
 
@@ -454,7 +455,7 @@ Si a priori, il n'y a pas de contrainte structurelle sur les objets à tester, l
 But : Générer un arbre binaire à $n$ nœuds internes.
 
 - Point de départ : une feuille numérotée 1
-- Supposons que l'on ait construit un arbre binaire  de taille $k$ ($k$ nœuds internes et $k+1$ feuilles étiquetées de $1$ à $k+1$).
+- Supposons que l'on ait construit un arbre binaire  de taille $k$ ($k$ nœuds internes et $k+1$ feuilles étiquetées de $1$ à $k + 1$).
   - On choisit uniformément un nœud, soit $F$ l'arbre enraciné en ce noeud et $A$ l'arbre global.
   - On ajoute un nœud interne et on tire pile/face pour savoir si $F$ est le fils gauche ou le fils droit de ce nœud. L'autre fils est une feuille étiquetée (k+2).
   - On remplace dans $A$, $F$ par le nouveau sous-arbre.
