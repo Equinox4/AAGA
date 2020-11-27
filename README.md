@@ -92,13 +92,9 @@ Problèmes :
 ---
 
 - [random.org](https://www.random.org/)
-
-  [Générateur de nombres aléatoires matériel](https://en.wikipedia.org/wiki/Hardware_random_number_generator) :
-
+- [Générateur de nombres aléatoires matériel](https://en.wikipedia.org/wiki/Hardware_random_number_generator)
 - [lavarand](https://fr.wikipedia.org/wiki/Lampe_%C3%A0_lave#Nombres_al%C3%A9atoires)
-
 - [comsire](https://comscire.com/)
-
 - [ORION](https://tams.informatik.uni-hamburg.de/publications/2001/SA_Witt_Hartmann/cdrom/Internetseiten/valley.interact.nl/RNG/home.html#research)
 
 ![](https://imgs.xkcd.com/comics/random_number.png)
@@ -116,7 +112,7 @@ Problème : trouver un bon Pseudo Random Number Generators !
 
 ---
 
-Les générateurs de nombres pseudo-aléatoires sont "tous" construits avec une idée d'itération : 
+Les générateurs de nombres pseudo-aléatoires sont "tous" construits avec une idée d'itération :
 
 - Soit $E$ l'ensemble des entiers dans lequel on souhaite générer.
 - On choisit $f : E \rightarrow E$.
@@ -125,7 +121,7 @@ Les générateurs de nombres pseudo-aléatoires sont "tous" construits avec une 
 
 ---
 
-**Propriété :** 
+**Propriété :**
 
 > - $\exists\lambda\in \mathbb{N}^*$ appelé période du générateur (on a $\lambda\leq |E|$).
 > - $\exists n_0\leq\lambda,\forall n\geq n_0, X_{n + \lambda} = X_n$.
@@ -140,7 +136,7 @@ Les générateurs de nombres pseudo-aléatoires sont "tous" construits avec une 
 
 ---
 
-**Exemple :** 
+**Exemple :**
 
 > $E={1, 2, ..., 8}$, $f(x) = 2x \mod(7) + 1$ et $X_0 = 8$.
 > **Que valent $\lambda$ et $n_0$ ?**
@@ -155,7 +151,7 @@ Les générateurs de nombres pseudo-aléatoires sont "tous" construits avec une 
 
 ---
 
-# 2- Exemples de PRNG 
+# 2- Exemples de PRNG
 
 ---
 
@@ -234,7 +230,7 @@ On prend comme graine un entier $x$ sans facteur commun avec $n$.
 On définit ensuite $x_{i + 1} = x_i^2 \mod n$.
 La parité de $x(i)$ donne la suite pseudo-aléatoire de bits proposée par BBS.
 
-Si la graine est choisie aléatoirement, et si "trouver les racines carrées modulo n est un problème difficile", alors aucun algorithme rapide ne fait mieux que le hasard pour prédire le m-ième digit à partir des précédents.
+Si la graine est choisie aléatoirement, et si "trouver les racines carrées modulo $n$ est un problème difficile", alors aucun algorithme rapide ne fait mieux que le hasard pour prédire le m-ième digit à partir des précédents.
 
 https://fr.wikipedia.org/wiki/Blum_Blum_Shub
 
@@ -341,14 +337,14 @@ Il existe $2^n$ suites binaires de taille $n$.
 Soit $\epsilon \in [0,1]$ et soit $m = (1 - \epsilon)n$
 Il existe $\sum_{i = 0}^{m} 2^i \le 2^{m + 1}$ suites binaires de taille inférieure ou égale à $m$.
 
-Ainsi, seule une proportion inférieure à $\frac{2^{m + 1}}{2^n}$ de suites binaires de taille n peuvent avoir une complexité de Kolmogorov inférieure à $m$.
-Or,
-$
-\frac{2^{m + 1}}{2^n} 
-= 2^{(1 - \epsilon)n + 1 - n} 
-= 2^{-\epsilon * n + 1} 
-= \frac{2}{2^{\epsilon * n}}
-$ (tend vers 0 quand $n$ tend vers l'infini). CQFD!
+Ainsi, seule une proportion inférieure à $\frac{2^{m + 1}}{2^n}$ de suites binaires de taille $n$ peuvent avoir une complexité de Kolmogorov inférieure à $m$.
+
+Or, $\frac{2^{m + 1}}{2^n}
+= 2^{(1 - \epsilon)n + 1 - n}
+= 2^{-\epsilon * n + 1}
+= \frac{2}{2^{\epsilon * n}}$
+
+(tend vers 0 quand $n$ tend vers l'infini). CQFD!
 
 **Propriété :**
 
@@ -356,7 +352,7 @@ $ (tend vers 0 quand $n$ tend vers l'infini). CQFD!
 
 **Idée de preuve:**
 
-> Shannon source coding theorem: taille compressée arbitrairement proche de 
+> Shannon source coding theorem: taille compressée arbitrairement proche de
 $H * n$, avec $H = -p{_1}\log_2(p_1) - (1 - p_1)\log_2(1 - p_1)$ et $H < 1$ pour $p_1 \ne 0.5$
 https://en.wikipedia.org/wiki/Arithmetic_coding
 
@@ -390,20 +386,20 @@ But : construire une suite pseudo-aléatoire, c'est-à-dire une suite qui s'appr
 ## Tests statistiques
 
 - Difficile pour un humain de décider manuellement si une suite est aléatoire ou pas (tendance à éviter les choses qui "semblent" non-aléatoires, e.g. mêmes nombres consécutifs).
-- $$\pi = 3.14159\textcolor{red}{26}53589\textcolor{blue}{793238}46\textcolor{red}{26}43\textcolor{blue}{383279}50$$
+- $\pi = 3.14159\textcolor{red}{26}53589\textcolor{blue}{793238}46\textcolor{red}{26}43\textcolor{blue}{383279}50$
 - Utiliser des tests mécaniques non-biaisés !
 
 **Proposer des tests statistiques.**
 
 ---
 
-### [Test spectral](https://fr.wikipedia.org/wiki/Test_spectral) 
+### [Test spectral](https://fr.wikipedia.org/wiki/Test_spectral)
 
-Représentation en 3D de 100 000 valeurs générées par [RANDU](https://fr.wikipedia.org/wiki/RANDU). Chaque point est détermine par trois tirages pseudo-aléatoires  consécutifs. On voit ainsi que les points se trouvent sur un ensemble de 15 plans de l'espace.![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Randu.png/1024px-Randu.png) 
+Représentation en 3D de 100 000 valeurs générées par [RANDU](https://fr.wikipedia.org/wiki/RANDU). Chaque point est détermine par trois tirages pseudo-aléatoires  consécutifs. On voit ainsi que les points se trouvent sur un ensemble de 15 plans de l'espace.![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Randu.png/1024px-Randu.png)
 
 ---
 
-### Diehard test and BigCrush test 
+### Diehard test and BigCrush test
 
 - **Diehard test :** https://en.wikipedia.org/wiki/Diehard_tests ; https://webhome.phy.duke.edu/~rgb/General/dieharder.php
 - **BigCrush test :** http://simul.iro.umontreal.ca/testu01/tu01.html
@@ -455,9 +451,9 @@ Si a priori, il n'y a pas de contrainte structurelle sur les objets à tester, l
 But : Générer un arbre binaire à $n$ nœuds internes.
 
 - Point de départ : une feuille numérotée 1
-- Supposons que l'on ait construit un arbre binaire  de taille $k$ ($k$ nœuds internes et $k+1$ feuilles étiquetées de $1$ à $k + 1$).
+- Supposons que l'on ait construit un arbre binaire  de taille $k$ ($k$ nœuds internes et $k + 1$ feuilles étiquetées de $1$ à $k + 1$).
   - On choisit uniformément un nœud, soit $F$ l'arbre enraciné en ce noeud et $A$ l'arbre global.
-  - On ajoute un nœud interne et on tire pile/face pour savoir si $F$ est le fils gauche ou le fils droit de ce nœud. L'autre fils est une feuille étiquetée (k+2).
+  - On ajoute un nœud interne et on tire pile/face pour savoir si $F$ est le fils gauche ou le fils droit de ce nœud. L'autre fils est une feuille étiquetée $k + 2$.
   - On remplace dans $A$, $F$ par le nouveau sous-arbre.
 
 ---
