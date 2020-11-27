@@ -470,6 +470,8 @@ But : Générer un arbre binaire à $n$ nœuds internes.
 
 **Preuve ?**
 
+> Chaque arbre binaire étiqueté a une et une seule possibilité d'être construit (on peut le voir en le déconstruisant : en revenant en arrière dans la construction).
+
 **Remarques :** *(Complexité en nombre de bits aléatoires)*
 
 - On ne peut pas faire mieux que $\lceil \log_2(C_n) \rceil \in \Theta(n)$.
