@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html data-markdown-preview-plus-context="html-export">
+  <head>
+    <meta charset="utf-8" />
+    <title>aaga.md</title><script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX","output/HTML-CSS"],
+    extensions: ["[a11y]/accessibility-menu.js"],
+    'HTML-CSS': {
+      availableFonts: [],
+      webFont: 'TeX',
+      undefinedFamily: "serif",
+      mtextFontInherit: true,
+    },
+    TeX: {
+  "Macros": {},
+  "equationNumbers": {},
+  "extensions": [
+    "AMSmath.js",
+    "AMSsymbols.js",
+    "noErrors.js",
+    "noUndefined.js"
+  ]
+},
+    showMathMenu: true
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
+    <style>.emoji {
+  max-width: 1em !important;
+}
+del {
+  text-decoration: none;
+  position: relative;
+}
+del::after {
+  border-bottom: 1px solid black;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+ul.contains-task-list li.task-list-item {
+  position: relative;
+  list-style-type: none;
+}
+ul.contains-task-list li.task-list-item input.task-list-item-checkbox {
+  position: absolute;
+  transform: translateX(-100%);
+  width: 26px;
+}
+span.critic.comment {
+  position: relative;
+}
+span.critic.comment::before {
+  content: '\1f4ac';
+  position: initial;
+}
+span.critic.comment > span {
+  display: none;
+}
+span.critic.comment:hover > span {
+  display: initial;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid;
+  border-radius: 5px;
+  max-height: 4em;
+  overflow: auto;
+}
+span.critic.comment:focus > span {
+  display: initial;
+  text-decoration: underline;
+  position: initial;
+  top: auto;
+  left: auto;
+  border: initial;
+  border-radius: initial;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+}
+
+body {
+  overflow: initial !important;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  line-height: 1.6;
+  word-wrap: break-word;
+  padding: 30px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+body > *:first-child {
+  margin-top: 0 !important;
+}
+body > *:last-child {
+  margin-bottom: 0 !important;
+}
+body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+body .absent {
+  color: #c00;
+}
+body .anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+body .anchor:focus {
+  outline: none;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+body h1 .octicon-link,
+body h2 .octicon-link,
+body h3 .octicon-link,
+body h4 .octicon-link,
+body h5 .octicon-link,
+body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+body h1:hover .anchor,
+body h2:hover .anchor,
+body h3:hover .anchor,
+body h4:hover .anchor,
+body h5:hover .anchor,
+body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  text-decoration: none;
+}
+body h1:hover .anchor .octicon-link,
+body h2:hover .anchor .octicon-link,
+body h3:hover .anchor .octicon-link,
+body h4:hover .anchor .octicon-link,
+body h5:hover .anchor .octicon-link,
+body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+body h1 tt,
+body h2 tt,
+body h3 tt,
+body h4 tt,
+body h5 tt,
+body h6 tt,
+body h1 code,
+body h2 code,
+body h3 code,
+body h4 code,
+body h5 code,
+body h6 code {
+  font-size: inherit;
+}
+body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+body h1 .anchor {
+  line-height: 1;
+}
+body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+body h2 .anchor {
+  line-height: 1;
+}
+body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+body h3 .anchor {
+  line-height: 1.2;
+}
+body h4 {
+  font-size: 1.25em;
+}
+body h4 .anchor {
+  line-height: 1.2;
+}
+body h5 {
+  font-size: 1em;
+}
+body h5 .anchor {
+  line-height: 1.1;
+}
+body h6 {
+  font-size: 1em;
+  color: #777;
+}
+body h6 .anchor {
+  line-height: 1.1;
+}
+body p,
+body blockquote,
+body ul,
+body ol,
+body dl,
+body table,
+body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+body ul,
+body ol {
+  padding-left: 2em;
+}
+body ul.no-list,
+body ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+body ul ul,
+body ul ol,
+body ol ol,
+body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+body li > p {
+  margin-top: 16px;
+}
+body dl {
+  padding: 0;
+}
+body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+body blockquote > :first-child {
+  margin-top: 0;
+}
+body blockquote > :last-child {
+  margin-bottom: 0;
+}
+body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+body table th {
+  font-weight: bold;
+}
+body table th,
+body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body .emoji {
+  max-width: none;
+}
+body span.frame {
+  display: block;
+  overflow: hidden;
+}
+body span.frame > span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+body span.frame span img {
+  display: block;
+  float: left;
+}
+body span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: #333;
+}
+body span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+body span.align-center > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+body span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+body span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+body span.align-right > span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+body span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+body span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+body span.float-left span {
+  margin: 13px 0 0;
+}
+body span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+body span.float-right > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+body code,
+body tt {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+body code:before,
+body tt:before,
+body code:after,
+body tt:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+body code br,
+body tt br {
+  display: none;
+}
+body del code {
+  text-decoration: inherit;
+}
+body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+body .highlight {
+  margin-bottom: 16px;
+}
+body .highlight pre,
+body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+body pre {
+  word-wrap: normal;
+}
+body pre code,
+body pre tt {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+body pre code:before,
+body pre tt:before,
+body pre code:after,
+body pre tt:after {
+  content: normal;
+}
+body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+span.critic.comment > span {
+  background-color: #fff;
+}
+a {
+  color: #337ab7;
+}
+
+pre.editor-colors {
+  background-color: white;
+  color: #555;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .gutter {
+  color: #555;
+  background: white;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #e87b00;
+}
+pre.editor-colors .invisible {
+  color: #555;
+}
+pre.editor-colors .selection .region {
+  background-color: #e1e1e1;
+}
+pre.editor-colors .bracket-matcher .region {
+  background-color: #C9C9C9;
+  opacity: .7;
+  border-bottom: 0 none;
+}
+pre.editor-colors.is-focused .cursor {
+  border-color: black;
+}
+pre.editor-colors.is-focused .selection .region {
+  background-color: #afc4da;
+}
+pre.editor-colors.is-focused .line-number.cursor-line-no-selection,
+pre.editor-colors.is-focused .line.cursor-line {
+  background-color: rgba(255, 255, 134, 0.34);
+}
+.syntax--comment {
+  color: #999988;
+  font-style: italic;
+}
+.syntax--string {
+  color: #D14;
+}
+.syntax--string .syntax--source,
+.syntax--string .syntax--meta.syntax--embedded.syntax--line {
+  color: #5A5A5A;
+}
+.syntax--string .syntax--punctuation.syntax--section.syntax--embedded {
+  color: #920B2D;
+}
+.syntax--string .syntax--punctuation.syntax--section.syntax--embedded .syntax--source {
+  color: #920B2D;
+}
+.syntax--constant.syntax--numeric {
+  color: #D14;
+}
+.syntax--constant.syntax--language {
+  color: #606aa1;
+}
+.syntax--constant.syntax--character,
+.syntax--constant.syntax--other {
+  color: #606aa1;
+}
+.syntax--constant.syntax--symbol {
+  color: #990073;
+}
+.syntax--constant.syntax--numeric.syntax--line-number.syntax--find-in-files .syntax--match {
+  color: rgba(143, 190, 0, 0.63);
+}
+.syntax--variable {
+  color: #008080;
+}
+.syntax--variable.syntax--parameter {
+  color: #606aa1;
+}
+.syntax--keyword {
+  color: #222;
+  font-weight: bold;
+}
+.syntax--keyword.syntax--unit {
+  color: #445588;
+}
+.syntax--keyword.syntax--special-method {
+  color: #0086B3;
+}
+.syntax--storage {
+  color: #222;
+}
+.syntax--storage.syntax--type {
+  color: #222;
+}
+.syntax--entity.syntax--name.syntax--class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #900;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #008080;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #458;
+  font-weight: bold;
+}
+.syntax--entity.syntax--name.syntax--filename.syntax--find-in-files {
+  color: #E6DB74;
+}
+.syntax--support.syntax--constant,
+.syntax--support.syntax--function,
+.syntax--support.syntax--type {
+  color: #458;
+}
+.syntax--support.syntax--class {
+  color: #008080;
+}
+.syntax--invalid {
+  color: #F8F8F0;
+  background-color: #00A8C6;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #F8F8F0;
+  background-color: #8FBE00;
+}
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json,
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json .syntax--punctuation.syntax--string {
+  color: #000080;
+}
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json {
+  color: #d14;
+}
+.syntax--meta.syntax--diff,
+.syntax--meta.syntax--diff.syntax--header {
+  color: #75715E;
+}
+.syntax--css.syntax--support.syntax--property-name {
+  font-weight: bold;
+  color: #333;
+}
+.syntax--css.syntax--constant {
+  color: #099;
+}
+.syntax--source.syntax--gfm {
+  color: #444;
+}
+.syntax--gfm .syntax--markup.syntax--heading {
+  color: #111;
+}
+.syntax--gfm .syntax--link {
+  color: #888;
+}
+.syntax--gfm .syntax--variable.syntax--list {
+  color: #888;
+}
+.syntax--markdown .syntax--paragraph {
+  color: #444;
+}
+.syntax--markdown .syntax--heading {
+  color: #111;
+}
+.syntax--markdown .syntax--link {
+  color: #888;
+}
+.syntax--markdown .syntax--link .syntax--string {
+  color: #888;
+}
+
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+</style>
+
+  </head>
+  <body>
+    <h1 id="analyse-d%E2%80%99algorithmes-et-g%C3%A9n%C3%A9ration-al%C3%A9atoire-(aaga)">Analyse d’Algorithmes et Génération Aléatoire (AAGA)</h1>
+<hr>
+<p></p><div class="table-of-contents"><ul><li><a href="#analyse-d'algorithmes-et-g%C3%A9n%C3%A9ration-al%C3%A9atoire-(aaga)">Analyse d'Algorithmes et Génération Aléatoire (AAGA)</a><ul><li><a href="#organisation">Organisation</a></li></ul></li><li><a href="#1--g%C3%A9n%C3%A9ration-d'entiers-%3A-introduction">1- Génération d'entiers : Introduction</a><ul><li><a href="#deux-types-de-g%C3%A9n%C3%A9rateurs-d'entiers-%3A">Deux types de générateurs d'entiers :</a></li></ul></li><li><a href="#2--exemples-de-prng">2- Exemples de PRNG</a><ul><li><a href="#g%C3%A9n%C3%A9rateurs-congruentiels-lin%C3%A9aires">Générateurs congruentiels linéaires</a></li><li><a href="#g%C3%A9n%C3%A9rateur-blum-blum-shub-(bbs)">Générateur Blum Blum Shub (BBS)</a></li><li><a href="#registre-%C3%A0-d%C3%A9calage">Registre à décalage</a></li><li><a href="#le-mersenne-twister">Le Mersenne Twister</a></li></ul></li><li><a href="#3--suite-al%C3%A9atoire-%3A-qu'est-ce-que-c'est-%3F">3- Suite aléatoire : qu'est-ce que c'est ?</a><ul><li><a href="#complexit%C3%A9-de-kolmogorov">Complexité de Kolmogorov</a></li><li><a href="#tests-statistiques">Tests statistiques</a></li><li><a href="#trois-degr%C3%A9s-de-hasard">Trois degrés de hasard</a></li></ul></li><li><a href="#4--g%C3%A9n%C3%A9ration-de-structures-arborescentes">4- Génération de Structures Arborescentes</a><ul><li><a href="#algorithme-de-r%C3%A9my-(1985)">Algorithme de Rémy (1985)</a></li><li><a href="#correction-et-complexit%C3%A9">Correction et Complexité</a></li></ul></li></ul></div><p></p>
+<hr>
+<h2 id="organisation">Organisation</h2>
+<p><strong>Équipe Pédagogique :</strong></p>
+<ul>
+<li><a href="https://sites.google.com/view/danisch/home">Maximilien Danisch</a> (Max)</li>
+<li><a href="https://www-apr.lip6.fr/~buixuan/">Bùi Xuân Bình Minh</a> (Bin)</li>
+</ul>
+<p><strong>Emploi du temps :</strong></p>
+<ul>
+<li>Séances 1, puis séances 5 à 7 avec Max</li>
+<li>Séances 2 à 4, puis séances 8 à 14 avec Bin</li>
+</ul>
+<p><strong>Évaluation :</strong></p>
+<ul>
+<li>Deux examens répartis : 25% (V1GA) et 20% (V2final).</li>
+<li>Deux projets: 20% (V1AA) et 25% (V2démo).</li>
+<li>Un devoir sur table: 10% (V2CC).</li>
+</ul>
+<hr>
+<h1 id="1--g%C3%A9n%C3%A9ration-d%E2%80%99entiers-%3A-introduction">1- Génération d’entiers : Introduction</h1>
+<p>“<em>Le vrai hasard étant hasardeux</em>, <em>contentons</em>-<em>nous</em> d’un <em>pseudo</em>-<em>hasard et adaptons-le à nos besoins</em>” (Jean-Paul Delahaye dans <a href="http://www.lifl.fr/~jdelahay/pls/1998/051.pdf">Pour la Science 1998</a>).</p>
+<hr>
+<p>Depuis des années, on tente d’enlever tout hasard au sein d’un système informatique :</p>
+<ul>
+<li>Aujourd’hui un calcul composé de milliards d’opérations peut être lancé plusieurs fois et donnera à chaque fois le même résultat.</li>
+<li><a href="https://fr.wikipedia.org/wiki/Code_correcteur">Algorithme de correction d’erreurs</a> (Transmission de données et <a href="https://fr.wikipedia.org/wiki/RAID_(informatique)">stockage de données</a>).</li>
+</ul>
+<hr>
+<p>Pourtant maintenant que l’on gère l’élimination du hasard, on a besoin de le faire réapparaître. Trois grands domaines :</p>
+<ol>
+<li>La simulation (Par exemple pour modéliser un feu de forêt)</li>
+<li>L’algorithmique (<a href="https://fr.wikipedia.org/wiki/Algorithme_probabiliste">Algorithmes probabilistes</a> : par exemple l’<a href="https://fr.wikipedia.org/wiki/Algorithme_de_Karger">Algorithme de Kager</a> pour MIN-CUT. <strong>Calculer la probabilité d’erreur ?</strong>)</li>
+<li>La cryptographie (par exemple : <a href="https://fr.wikipedia.org/wiki/Masque_jetable">Masque jetable</a> et <a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">Chiffrement RSA</a>)</li>
+</ol>
+<hr>
+<p>Pour ces trois applications, ce n’est pas le même hasard qui est nécessité !
+Dans la plupart des langages de programmation, il y a un générateur de hasard appelé “pseudo random generator”.</p>
+<p>Attention : Python depuis la version 2.3 Mersenne Twister :</p>
+<blockquote>
+<p>“The pseudo-random denerators of this module should not be used for security purposes.”</p>
+</blockquote>
+<p>Vous, en tant qu’experts en informatique, vous n’avez pas besoin de connaître toutes les raisons qui peuvent poser problème. Mais vous devez réagir correctement face à ce type de message.</p>
+<hr>
+<p><strong>LIVE DEMO !!! :</strong> <em>(Exemple à partir de Java 6)</em></p>
+<ul>
+<li>Avec deux entiers consécutifs générés, je peux deviner tous les suivants en moins de 10 lignes de code python.</li>
+<li>Pire : avec deux entiers consécutifs, je retrouve tous les précédents !</li>
+</ul>
+<hr>
+<h2 id="deux-types-de-g%C3%A9n%C3%A9rateurs-d%E2%80%99entiers-%3A">Deux types de générateurs d’entiers :</h2>
+<ol>
+<li>True Random Number Generators</li>
+<li>Pseudo Random Number Generators</li>
+</ol>
+<hr>
+<h3 id="true-random-number-generators">True Random Number Generators</h3>
+<ul>
+<li>Usage en cryptographie</li>
+<li>Obligation : non prévisible !</li>
+<li>Basé la plupart du temps sur des processus physiques :
+<ul>
+<li>Un opérateur fait des piles ou face avec une pièces…</li>
+<li>Calcul de la décroissance radioactive</li>
+<li>Utilisation de la température du processeur</li>
+<li>Utilisation de l’horloge</li>
+</ul>
+</li>
+</ul>
+<p>Il peut y avoir un biais (face 55%, pile 44.9% et tranche 0.1%) : on peut faire un post-traitement si nécessaire.</p>
+<p>Problèmes :</p>
+<ul>
+<li>coûte cher</li>
+<li>vitesse lente de génération</li>
+<li>dé-bug de programmes</li>
+</ul>
+<hr>
+<ul>
+<li><a href="https://www.random.org/">random.org</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hardware_random_number_generator">Générateur de nombres aléatoires matériel</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Lampe_%C3%A0_lave#Nombres_al%C3%A9atoires">lavarand</a></li>
+<li><a href="https://comscire.com/">comsire</a></li>
+<li><a href="https://tams.informatik.uni-hamburg.de/publications/2001/SA_Witt_Hartmann/cdrom/Internetseiten/valley.interact.nl/RNG/home.html#research">ORION</a></li>
+</ul>
+<p><img src="https://imgs.xkcd.com/comics/random_number.png" alt=""></p>
+<hr>
+<h3 id="pseudo-random-number-generators">Pseudo Random Number Generators</h3>
+<ul>
+<li>Ils sont déterministes : pas réellement d’aléatoire !</li>
+<li>Très rapide</li>
+<li>Portable</li>
+<li>On peut reproduire des séquences d’entiers aléatoires (grâce à une graine)</li>
+</ul>
+<p>Problème : trouver un bon Pseudo Random Number Generators !</p>
+<hr>
+<p>Les générateurs de nombres pseudo-aléatoires sont “tous” construits avec une idée d’itération :</p>
+<ul>
+<li>Soit <span class="math inline-math"><script type="math/tex">E</script></span> l’ensemble des entiers dans lequel on souhaite générer.</li>
+<li>On choisit <span class="math inline-math"><script type="math/tex">f : E \rightarrow E</script></span>.</li>
+<li>On définit “aléatoirement” <span class="math inline-math"><script type="math/tex">X_0 \in E</script></span>, nommé la graine.</li>
+<li>Puis on fait <span class="math inline-math"><script type="math/tex">X_{n + 1} = f(X_n)</script></span>.</li>
+</ul>
+<hr>
+<p><strong>Propriété :</strong></p>
+<blockquote>
+<ul>
+<li><span class="math inline-math"><script type="math/tex">\exists\lambda\in \mathbb{N}^*</script></span> appelé période du générateur (on a <span class="math inline-math"><script type="math/tex">\lambda\leq |E|</script></span>).</li>
+<li><span class="math inline-math"><script type="math/tex">\exists n_0\leq\lambda,\forall n\geq n_0, X_{n + \lambda} = X_n</script></span>.</li>
+</ul>
+</blockquote>
+<p><strong>Remarques :</strong></p>
+<blockquote>
+<ul>
+<li>Une fois que <span class="math inline-math"><script type="math/tex">n_0</script></span> est atteint, on boucle indéfiniment dans la même suite d’entiers avec une période <span class="math inline-math"><script type="math/tex">\lambda</script></span>.</li>
+<li>La période est définie par les entiers <span class="math inline-math"><script type="math/tex">i, j</script></span> les plus proches possible telle que <span class="math inline-math"><script type="math/tex">X_i = X_j</script></span>.</li>
+<li>La longueur de la période est cruciale pour qu’un générateur soit de qualité.</li>
+</ul>
+</blockquote>
+<p><strong>Preuve de l’existence de <span class="math inline-math"><script type="math/tex">\lambda</script></span> ?</strong></p>
+<hr>
+<p><strong>Exemple :</strong></p>
+<blockquote>
+<p><span class="math inline-math"><script type="math/tex">E={1, 2, ..., 8}</script></span>, <span class="math inline-math"><script type="math/tex">f(x) = 2x \mod(7) + 1</script></span> et <span class="math inline-math"><script type="math/tex">X_0 = 8</script></span>.
+<strong>Que valent <span class="math inline-math"><script type="math/tex">\lambda</script></span> et <span class="math inline-math"><script type="math/tex">n_0</script></span> ?</strong></p>
+</blockquote>
+<hr>
+<p><strong>Paradoxe des anniversaires :</strong></p>
+<blockquote>
+<p>On veut construire aléatoirement un générateur aléatoire d’entier dans <span class="math inline-math"><script type="math/tex">[\![1,n]\!]</script></span>. On choisit une suite d’entiers dans <span class="math inline-math"><script type="math/tex">[\![1,n]\!]</script></span> de façon indépendante et uniforme. <strong>Quelle est la probabilité qu’une suite de j entiers contienne au moins deux entiers identiques ?</strong></p>
+</blockquote>
+<p><strong>Conclusion ?</strong></p>
+<hr>
+<h1 id="2--exemples-de-prng">2- Exemples de PRNG</h1>
+<hr>
+<p>Il existe une infinité de PRNG !</p>
+<p><strong>Question :</strong> Proposer quelques PRNG ?</p>
+<hr>
+<h2 id="g%C3%A9n%C3%A9rateurs-congruentiels-lin%C3%A9aires">Générateurs congruentiels linéaires</h2>
+<p>Schéma introduit par Lehmer en 1949. Jusque dans les années 90 c’était la méthode la plus utilisée. Même les générateurs actuels ne sont pas complètement différents.</p>
+<p><strong>Principe :</strong></p>
+<blockquote>
+<p>On a besoin de 4 entiers :</p>
+<ul>
+<li><span class="math inline-math"><script type="math/tex">m</script></span> : le modulo (<span class="math inline-math"><script type="math/tex">m > 0</script></span>)</li>
+<li><span class="math inline-math"><script type="math/tex">a</script></span> : le multiplicateur (<span class="math inline-math"><script type="math/tex">0 \leq a < m</script></span>)</li>
+<li><span class="math inline-math"><script type="math/tex">c</script></span> : l’incrément (<span class="math inline-math"><script type="math/tex">0 \leq c < m</script></span>)</li>
+<li><span class="math inline-math"><script type="math/tex">X_0</script></span> : la valeur initiale, appelée graine (<span class="math inline-math"><script type="math/tex">0 \leq X_0 < m</script></span>)</li>
+</ul>
+<p>On construit une suite de nombre dans <span class="math inline-math"><script type="math/tex">[\![0,m-1]\!]</script></span> de la manière suivante : <span class="math inline-math"><script type="math/tex">X_{n + 1} = (a X_n + c) \mod m</script></span>.
+(X_n) est appelée suite congruentielle (ou modulaire) linéaire</p>
+</blockquote>
+<hr>
+<p><strong>Exemple :</strong></p>
+<blockquote>
+<p><span class="math inline-math"><script type="math/tex">X_{n + 1} = (2 X_n + 3) \mod 10</script></span></p>
+</blockquote>
+<!--
+0|3 9 1 5 3
+1|5 3 9 1
+2|7 7
+3|9 1 5 3
+Choisir les nombres magiques de façon aléatoire ne donne pas forcément des suites aléatoires. Par exemple ici, seuls des entiers impairs peuvent apparaître.
+-->
+<hr>
+<p><strong>Exercice :</strong></p>
+<blockquote>
+<p>Exprimer <span class="math inline-math"><script type="math/tex">X_{n + k}</script></span> en fonction de <span class="math inline-math"><script type="math/tex">X_n</script></span>, <span class="math inline-math"><script type="math/tex">a</script></span>, <span class="math inline-math"><script type="math/tex">c</script></span>, <span class="math inline-math"><script type="math/tex">m</script></span> et <span class="math inline-math"><script type="math/tex">k</script></span>. On supposera <span class="math inline-math"><script type="math/tex">a \geq 2</script></span>.</p>
+</blockquote>
+<hr>
+<p><strong>Propriété :</strong></p>
+<blockquote>
+<p>Si <span class="math inline-math"><script type="math/tex">(X_n)</script></span> est une suite congruentielle linéaire, alors les suites extraites <span class="math inline-math"><script type="math/tex">(X_{n_0 + i_0 n})</script></span> avec <span class="math inline-math"><script type="math/tex">n_0</script></span> et <span class="math inline-math"><script type="math/tex">i_0</script></span> fixés sont des suites congruentielles linéaires.</p>
+</blockquote>
+<p><strong>Preuve ?</strong></p>
+<p>Multiplicateur = <span class="math inline-math"><script type="math/tex">a^{i_0}</script></span>
+Incrément = <span class="math inline-math"><script type="math/tex">\frac{a^{i_0} - 1}{a - 1}c</script></span>
+Graine = <span class="math inline-math"><script type="math/tex">X_{n_0}</script></span></p>
+<p><strong>Donner une formule directe pour calculer <span class="math inline-math"><script type="math/tex">X_n</script></span> (en fonction de <span class="math inline-math"><script type="math/tex">X_0</script></span>, <span class="math inline-math"><script type="math/tex">a</script></span>, <span class="math inline-math"><script type="math/tex">c</script></span>, <span class="math inline-math"><script type="math/tex">m</script></span>, et <span class="math inline-math"><script type="math/tex">n</script></span>) ?</strong></p>
+<p><span class="math inline-math"><script type="math/tex">X_{n} = a^n X_0 + \frac{a^{n} - 1}{a - 1}c \mod m</script></span></p>
+<hr>
+<ul>
+<li>Choix du module <span class="math inline-math"><script type="math/tex">m</script></span> ?
+<ul>
+<li>Pour générer des bits, ne pas prendre <span class="math inline-math"><script type="math/tex">m=2</script></span>, si non 010101 dans le meilleur cas</li>
+<li>Utiliser <span class="math inline-math"><script type="math/tex">Y_n=X_n \mod d</script></span></li>
+<li><span class="math inline-math"><script type="math/tex">m = 2^{64}</script></span> rapide (<strong>Pourquoi ?</strong>), mais attention aux bits de poids faibles : si <span class="math inline-math"><script type="math/tex">d</script></span> divise <span class="math inline-math"><script type="math/tex">m</script></span>, alors <span class="math inline-math"><script type="math/tex">Y_{n + 1} = (a Y_n + c) \mod d</script></span>. Prendre les bits de poids fort dans ce cas.</li>
+<li>Prendre <span class="math inline-math"><script type="math/tex">m=</script></span> grand nombre premier</li>
+</ul>
+</li>
+<li>Choix du multiplicateur <span class="math inline-math"><script type="math/tex">a</script></span> et de l’incrément <span class="math inline-math"><script type="math/tex">c</script></span> ?
+<ul>
+<li>On veut la période la plus longue possible, mais pas seulement (<span class="math inline-math"><script type="math/tex">a = c = 1</script></span>) !</li>
+</ul>
+</li>
+</ul>
+<h2 id="g%C3%A9n%C3%A9rateur-blum-blum-shub-(bbs)">Générateur Blum Blum Shub (BBS)</h2>
+<p>Soit <span class="math inline-math"><script type="math/tex">n</script></span> un produit de deux entiers premiers, chacun de la forme <span class="math inline-math"><script type="math/tex">4m + 3</script></span>.
+On prend comme graine un entier <span class="math inline-math"><script type="math/tex">x</script></span> sans facteur commun avec <span class="math inline-math"><script type="math/tex">n</script></span>.
+On définit ensuite <span class="math inline-math"><script type="math/tex">x_{i + 1} = x_i^2 \mod n</script></span>.
+La parité de <span class="math inline-math"><script type="math/tex">x(i)</script></span> donne la suite pseudo-aléatoire de bits proposée par BBS.</p>
+<p>Si la graine est choisie aléatoirement, et si “trouver les racines carrées modulo <span class="math inline-math"><script type="math/tex">n</script></span> est un problème difficile”, alors aucun algorithme rapide ne fait mieux que le hasard pour prédire le m-ième digit à partir des précédents.</p>
+<p><a href="https://fr.wikipedia.org/wiki/Blum_Blum_Shub">https://fr.wikipedia.org/wiki/Blum_Blum_Shub</a></p>
+<hr>
+<h2 id="registre-%C3%A0-d%C3%A9calage">Registre à décalage</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Principe_LFSR_8_bits.png/495px-Principe_LFSR_8_bits.png" alt=""></p>
+<p><a href="https://en.wikipedia.org/wiki/Linear-feedback_shift_register">https://en.wikipedia.org/wiki/Linear-feedback_shift_register</a></p>
+<hr>
+<h2 id="le-mersenne-twister">Le Mersenne Twister</h2>
+<ul>
+<li>C’est un générateur de nombre pseudo-aléatoire particulièrement réputé pour sa qualité.</li>
+<li>Développé par M. Matsumoto et T. Nishimura en 1997.</li>
+<li>Basé sur un type particulier de <a href="https://fr.wikipedia.org/wiki/Registre_%C3%A0_d%C3%A9calage">registre à décalage à rétroaction</a> et tient son nom d’un <a href="https://fr.wikipedia.org/wiki/Nombre_premier_de_Mersenne">nombre premier de Mersenne</a>.</li>
+<li>C’est le générateur par défaut de Python, PHP, Maple, Matlab, R, GNU Multiple Precision Arithmetic Library…</li>
+</ul>
+<hr>
+<p><strong>Avantages :</strong></p>
+<blockquote>
+<ul>
+<li>Sa période : <span class="math inline-math"><script type="math/tex">2^{19937} - 1</script></span> (c’est un nombre premier de Mersenne)</li>
+<li>k-distribué avec une précision de 32 bits</li>
+<li>Passe la grande majorité des tests statistiques (notamment Die Hard tests)</li>
+</ul>
+</blockquote>
+<p><strong>Inconvénients :</strong></p>
+<blockquote>
+<p>Espace d’état trop grand : une période de l’ordre de <span class="math inline-math"><script type="math/tex">2^{512}</script></span> devrait être suffisante (aussi bon et plus rapide) pour n’importe quelle application.</p>
+</blockquote>
+<hr>
+<p><strong>Remarques :</strong></p>
+<blockquote>
+<ul>
+<li>La période est aussi grande car l’algorithme est basé sur un ensemble de 624 entiers (32 bits) indépendants.</li>
+<li>Il faut pouvoir fournir une graine (relativement aléatoire) de 624 entiers : en général, on fait appel à un autre générateur aléatoire pour construire la graine.</li>
+<li>Il existe une version simplifiée datant de 2006 avec une période de <span class="math inline-math"><script type="math/tex">2^{607} - 1</script></span>.</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="3--suite-al%C3%A9atoire-%3A-qu%E2%80%99est-ce-que-c%E2%80%99est-%3F">3- Suite aléatoire : qu’est-ce que c’est ?</h1>
+<p>Paradoxalement, la théorie des probabilité n’est pas la mieux adaptée pour définir ce qu’est une suite aléatoire. Considérons les deux suites suivantes :</p>
+<ul>
+<li>01010101010101010101</li>
+<li>11010001101001011001</li>
+</ul>
+<p>Le bon sens dirait que la deuxième est plus aléatoire que la première et pourtant on peut prouver que chacune a la même probabilité d’apparaître que l’autre (si on prend une pièce parfaite et qu’on fait pile ou face).</p>
+<hr>
+<h2 id="complexit%C3%A9-de-kolmogorov">Complexité de Kolmogorov</h2>
+<p>En informatique, la notion de suite aléatoire a convergé vers la notion de suite complexe, ou incompressible.</p>
+<p><strong>Définition :</strong> <em>Complexité de Kolmogorov :</em></p>
+<blockquote>
+<p>Soit <span class="math inline-math"><script type="math/tex">a = a_1a_2...a_n</script></span> une suite binaire. La complexité de Kolmogorov de la suite <span class="math inline-math"><script type="math/tex">a</script></span> est la longueur, en nombre de bits, du plus petit programme permettant à un ordinateur donné de générer <span class="math inline-math"><script type="math/tex">a</script></span>.</p>
+</blockquote>
+<p>Pour nous, un ordinateur correspond à une <a href="https://fr.wikipedia.org/wiki/Machine_de_Turing_universelle">machine de Turing universelle</a>. La complexité de Kolmogorov est définie à une constante additive près, car elle dépend de l’ordinateur choisi.</p>
+<hr>
+<p><strong>Propriété :</strong> <em>in-calculabilité :</em></p>
+<blockquote>
+<p>La complexité de Kolmogorov n’est pas <a href="https://fr.wikipedia.org/wiki/Calculabilit%C3%A9">calculable</a>. En d’autre termes, il n’existe pas de programme informatique qui prenne en entrée <span class="math inline-math"><script type="math/tex">s</script></span> et renvoie <span class="math inline-math"><script type="math/tex">K(s)</script></span>.</p>
+</blockquote>
+<p><strong>Preuve ?</strong></p>
+<p>Par l’absurde, on suppose que Kolmo() existe: Kolmo prend en entrée une suite de caractères <span class="math inline-math"><script type="math/tex">s</script></span> et retourne <span class="math inline-math"><script type="math/tex">K(s)</script></span>, cad la taille du plus petit programme générant la suite de caractères <span class="math inline-math"><script type="math/tex">s</script></span>. On note <span class="math inline-math"><script type="math/tex">k</script></span> la complexité de Kolomogorov de Kolmo().</p>
+<p>Considérons le programme suivant:</p>
+<pre class="editor-colors lang-text" style="tab-size: 2;"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">n := 1
+Tant que Kolmo(n) &lt; k + 1000 faire:
+</span>    <span class="syntax--meta syntax--paragraph syntax--text">n := n + 1
+</span><span class="syntax--meta syntax--paragraph syntax--text">Fin du Tant que
+écrire n</span></span></pre>
+<p>Cet algorithme écrit le plus petit nombre à avoir une complexité de Kolmogorov supérieur à <span class="math inline-math"><script type="math/tex">k + 1000</script></span> (ce nombre existe car il n’y a qu’un nombre fini de programmes de taille plus petite que <span class="math inline-math"><script type="math/tex">k + 1000</script></span> et il y a une infinité de nombres entiers naturels)</p>
+<p>Mais l’algorithme ci-dessus s’écrit justement avec moins de <span class="math inline-math"><script type="math/tex">k + 1000</script></span> caractères:
+il est donc de complexité inférieure à <span class="math inline-math"><script type="math/tex">k + 1000</script></span>, or il écrit justement un nombre de complexité supérieur à <span class="math inline-math"><script type="math/tex">k + 1000</script></span>, ce qui est absurde.
+Donc il n’existe pas de fonction qui calcul la complexité de Kolmogorov.</p>
+<p><strong>Définition :</strong> <em>Indépendance de l’ordinateur :</em></p>
+<blockquote>
+<p>Une suite infinie <span class="math inline-math"><script type="math/tex">a = a_1a_2...a_n...</script></span> est dite aléatoire si <span class="math inline-math"><script type="math/tex">\lim_{n \rightarrow \infty} \frac{K(a)}{n} = 1</script></span>.</p>
+</blockquote>
+<p><strong>Propriété :</strong></p>
+<blockquote>
+<p>La plupart des suites de longueur <span class="math inline-math"><script type="math/tex">n</script></span> a une complexité de Kolmogorov au moins d’ordre <span class="math inline-math"><script type="math/tex">n</script></span>.</p>
+</blockquote>
+<p><strong>Preuve ?</strong></p>
+<p><span class="math inline-math"><script type="math/tex">K(a) > m = (1 - \epsilon) * n</script></span></p>
+<p>Soit <span class="math inline-math"><script type="math/tex">n</script></span> un entier naturel.
+Il existe <span class="math inline-math"><script type="math/tex">2^n</script></span> suites binaires de taille <span class="math inline-math"><script type="math/tex">n</script></span>.
+Soit <span class="math inline-math"><script type="math/tex">\epsilon \in [0,1]</script></span> et soit <span class="math inline-math"><script type="math/tex">m = (1 - \epsilon)n</script></span>
+Il existe <span class="math inline-math"><script type="math/tex">\sum_{i = 0}^{m} 2^i \le 2^{m + 1}</script></span> suites binaires de taille inférieure ou égale à <span class="math inline-math"><script type="math/tex">m</script></span>.</p>
+<p>Ainsi, seule une proportion inférieure à <span class="math inline-math"><script type="math/tex">\frac{2^{m + 1}}{2^n}</script></span> de suites binaires de taille <span class="math inline-math"><script type="math/tex">n</script></span> peuvent avoir une complexité de Kolmogorov inférieure à <span class="math inline-math"><script type="math/tex">m</script></span>.</p>
+<p>Or, <span class="math inline-math"><script type="math/tex">\frac{2^{m + 1}}{2^n}
+= 2^{(1 - \epsilon)n + 1 - n}
+= 2^{-\epsilon * n + 1}
+= \frac{2}{2^{\epsilon * n}}</script></span></p>
+<p>(tend vers 0 quand <span class="math inline-math"><script type="math/tex">n</script></span> tend vers l’infini). CQFD!</p>
+<p><strong>Propriété :</strong></p>
+<blockquote>
+<p>Une suite binaire aléatoire <span class="math inline-math"><script type="math/tex">a=a_1a_2...a_n</script></span> vérifie la loi des grands nombres : <span class="math inline-math"><script type="math/tex">\lim_{n \rightarrow \infty} \frac{\sum_{i = 1}^n a_i}{n} = \frac{1}{2}</script></span>.</p>
+</blockquote>
+<p><strong>Idée de preuve:</strong></p>
+<blockquote>
+<p>Shannon source coding theorem: taille compressée arbitrairement proche de
+<span class="math inline-math"><script type="math/tex">H * n</script></span>, avec <span class="math inline-math"><script type="math/tex">H = -p{_1}\log_2(p_1) - (1 - p_1)\log_2(1 - p_1)</script></span> et <span class="math inline-math"><script type="math/tex">H < 1</script></span> pour <span class="math inline-math"><script type="math/tex">p_1 \ne 0.5</script></span>
+<a href="https://en.wikipedia.org/wiki/Arithmetic_coding">https://en.wikipedia.org/wiki/Arithmetic_coding</a></p>
+</blockquote>
+<hr>
+<p><strong>Remarques :</strong></p>
+<blockquote>
+<ul>
+<li>Plusieurs autres propriétés statistiques sont valides sur les suites aléatoires.</li>
+<li>Suite des décimales de <span class="math inline-math"><script type="math/tex">\pi</script></span> non aléatoire, mais suit les bonnes propriétés de statistiques :
+<span class="math inline-math"><script type="math/tex">pi = 3.14159265358979323846264338327950</script></span>…</li>
+<li>Fabriqué de manière déterministe une suite aléatoire de bits (ou de n’importe quel objet) est contradictoire.</li>
+</ul>
+</blockquote>
+<p>But : construire une suite pseudo-aléatoire, c’est-à-dire une suite qui s’approche d’une suite aléatoire.</p>
+<hr>
+<p><strong>Remarque :</strong> (Informellement)</p>
+<blockquote>
+<p>On a besoin de s’approcher de l’imprévisible. Une suite <span class="math inline-math"><script type="math/tex">a</script></span> est pseudo-aléatoire si elle est produite par un algorithme et qu’il est algorithmiquement difficile de prévoir avec une probabilité <span class="math inline-math"><script type="math/tex">>\frac{1}{2}</script></span> le bit <span class="math inline-math"><script type="math/tex">a_{n + 1}</script></span> en connaissant tous les bits <span class="math inline-math"><script type="math/tex">a_1a_2...a_n</script></span> précédents (Formalisé par Yao en 1982).</p>
+</blockquote>
+<hr>
+<p><strong>Remarque :</strong></p>
+<blockquote>
+<p>On ne sait pas prouver qu’il existe une suite pseudo-aléatoire et le prouver permettrait de conclure <span class="math inline-math"><script type="math/tex">P\neq NP</script></span>. Pour le moment, on a une approche plutôt expérimentale pour construire des générateurs. Après construction d’un générateur, on vérifie que les propriétés mathématiques nécessaires (notamment statistiques) sont vérifiées.</p>
+</blockquote>
+<p><a href="https://en.wikipedia.org/wiki/One-way_function">Fonction à sens unique</a></p>
+<hr>
+<h2 id="tests-statistiques">Tests statistiques</h2>
+<ul>
+<li>Difficile pour un humain de décider manuellement si une suite est aléatoire ou pas (tendance à éviter les choses qui “semblent” non-aléatoires, e.g. mêmes nombres consécutifs).</li>
+<li><span class="math inline-math"><script type="math/tex">\pi = 3.14159\textcolor{red}{26}53589\textcolor{blue}{793238}46\textcolor{red}{26}43\textcolor{blue}{383279}50</script></span></li>
+<li>Utiliser des tests mécaniques non-biaisés !</li>
+</ul>
+<p><strong>Proposer des tests statistiques.</strong></p>
+<hr>
+<h3 id="test-spectral"><a href="https://fr.wikipedia.org/wiki/Test_spectral">Test spectral</a></h3>
+<p>Représentation en 3D de 100 000 valeurs générées par <a href="https://fr.wikipedia.org/wiki/RANDU">RANDU</a>. Chaque point est détermine par trois tirages pseudo-aléatoires  consécutifs. On voit ainsi que les points se trouvent sur un ensemble de 15 plans de l’espace.<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Randu.png/1024px-Randu.png" alt=""></p>
+<hr>
+<h3 id="diehard-test-and-bigcrush-test">Diehard test and BigCrush test</h3>
+<ul>
+<li><strong>Diehard test :</strong> <a href="https://en.wikipedia.org/wiki/Diehard_tests">https://en.wikipedia.org/wiki/Diehard_tests</a> ; <a href="https://webhome.phy.duke.edu/~rgb/General/dieharder.php">https://webhome.phy.duke.edu/~rgb/General/dieharder.php</a></li>
+<li><strong>BigCrush test :</strong> <a href="http://simul.iro.umontreal.ca/testu01/tu01.html">http://simul.iro.umontreal.ca/testu01/tu01.html</a></li>
+</ul>
+<hr>
+<h2 id="trois-degr%C3%A9s-de-hasard">Trois degrés de hasard</h2>
+<ul>
+<li><strong>Hasard faible :</strong> Satisfaction des tests statistiques. Peut être produit par des algorithmes rapides. Utile en simulation.</li>
+<li><strong>Hasard moyen :</strong> Imprévisibilité pour un observateur ne disposant que de moyens de calcul réalistes. Peut être produit (vraisemblablement) par algorithmes moyennement rapides. Utile en cryptographie.</li>
+<li><strong>Hasard fort :</strong> Imprévisibilité totale, incompressibilité, contenu maximum en information. Ne peut jamais être produit par algorithme, mais vraisemblablement par des moyens physiques. Utile en cryptographie et en théorie de l’information.</li>
+</ul>
+<hr>
+<h1 id="4--g%C3%A9n%C3%A9ration-de-structures-arborescentes">4- Génération de Structures Arborescentes</h1>
+<p>Les arbres sont omniprésents en informatique. Savoir les générer permet par exemple de tester des programmes manipulant ces objets.</p>
+<p>Si a priori, il n’y a pas de contrainte structurelle sur les objets à tester, la méthode idéale consiste à la génération uniforme, c’est-à-dire que deux objets de même taille sont générés avec la même probabilité.</p>
+<hr>
+<p><strong>Proposition :</strong> <em>Génération optimale (en nombre de bits aléatoires)</em></p>
+<blockquote>
+<p>Soit <span class="math inline-math"><script type="math/tex">E</script></span> un ensemble d’objets (pas forcément de même taille). Le nombre minimum de bits aléatoires pour générer uniformément un objet de <span class="math inline-math"><script type="math/tex">E</script></span> est <span class="math inline-math"><script type="math/tex">\lceil \log_2(|E|)\rceil</script></span>.</p>
+</blockquote>
+<p><strong>Preuve ?</strong></p>
+<p><strong>Remarques :</strong></p>
+<blockquote>
+<p>Souvent on veut choisir uniformément un objet de <span class="math inline-math"><script type="math/tex">E</script></span> sans les avoir tous construits.</p>
+</blockquote>
+<hr>
+<p><strong>Définition :</strong> <em>(Arbres binaires)</em></p>
+<blockquote>
+<p>Un arbre binaire est soit (i) une feuille, soit (ii) un nœud interne et deux fils qui sont des arbres binaires.</p>
+</blockquote>
+<p><strong>Proposition :</strong></p>
+<blockquote>
+<p>Il y a <span class="math inline-math"><script type="math/tex">C_n=\frac{1}{n + 1}{2n \choose n}</script></span> (dit nombres de Catalan) arbres binaire avec <span class="math inline-math"><script type="math/tex">n</script></span> nœuds internes (et donc <span class="math inline-math"><script type="math/tex">n + 1</script></span> feuilles).</p>
+</blockquote>
+<p><strong>Preuve ?</strong></p>
+<hr>
+<h2 id="algorithme-de-r%C3%A9my-(1985)">Algorithme de Rémy (1985)</h2>
+<p>But : Générer un arbre binaire à <span class="math inline-math"><script type="math/tex">n</script></span> nœuds internes.</p>
+<ul>
+<li>Point de départ : une feuille numérotée 1</li>
+<li>Supposons que l’on ait construit un arbre binaire  de taille <span class="math inline-math"><script type="math/tex">k</script></span> (<span class="math inline-math"><script type="math/tex">k</script></span> nœuds internes et <span class="math inline-math"><script type="math/tex">k + 1</script></span> feuilles étiquetées de <span class="math inline-math"><script type="math/tex">1</script></span> à <span class="math inline-math"><script type="math/tex">k + 1</script></span>).
+<ul>
+<li>On choisit uniformément un nœud, soit <span class="math inline-math"><script type="math/tex">F</script></span> l’arbre enraciné en ce noeud et <span class="math inline-math"><script type="math/tex">A</script></span> l’arbre global.</li>
+<li>On ajoute un nœud interne et on tire pile/face pour savoir si <span class="math inline-math"><script type="math/tex">F</script></span> est le fils gauche ou le fils droit de ce nœud. L’autre fils est une feuille étiquetée <span class="math inline-math"><script type="math/tex">k + 2</script></span>.</li>
+<li>On remplace dans <span class="math inline-math"><script type="math/tex">A</script></span>, <span class="math inline-math"><script type="math/tex">F</script></span> par le nouveau sous-arbre.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="correction-et-complexit%C3%A9">Correction et Complexité</h2>
+<p><strong>Théorème :</strong> <em>(Correction)</em></p>
+<blockquote>
+<p>Après avoir effacé les étiquettes des feuilles de l’arbre généré, on obtient un arbre binaire de taille n uniforme parmi tous les arbres binaires de taille n.</p>
+</blockquote>
+<p><strong>Preuve ?</strong></p>
+<blockquote>
+<p>Chaque arbre binaire étiqueté a une et une seule possibilité d’être construit (on peut le voir en le déconstruisant : en revenant en arrière dans la construction).</p>
+</blockquote>
+<p><strong>Remarques :</strong> <em>(Complexité en nombre de bits aléatoires)</em></p>
+<ul>
+<li>On ne peut pas faire mieux que <span class="math inline-math"><script type="math/tex">\lceil \log_2(C_n) \rceil \in \Theta(n)</script></span>.</li>
+<li>Avec l’algorithme de Rémy <span class="math inline-math"><script type="math/tex">\Theta(n\log(n))</script></span> bits sont nécessaires.</li>
+</ul>
+<p><strong>Preuve ?</strong></p>
+<hr>
+
+  </body>
+</html>
